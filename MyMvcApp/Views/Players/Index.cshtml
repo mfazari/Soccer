@@ -1,0 +1,41 @@
+@model List<PlayerModel>
+
+@{
+    ViewData["Title"] = "Player";
+}
+
+
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Players List</title>
+</head>
+<body>
+
+<div class="container">
+    <h2>Players List</h2>
+    <table class="table table-striped">
+        <thead>
+            <tr>
+                <th>Player Name</th>
+                <th>Position</th>
+                <th>Jersey Number</th>
+                <th>Goals Scored</th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (var player in Model)
+            {
+                <tr>
+                    <td>@player.PlayerName</td>
+                    <td>@player.Position</td>
+                    <td>@player.JerseyNumber</td>
+                    <td>@player.GoalsScored</td>
+                </tr>
+            }
+        </tbody>
+    </table>
+</div>
+
+</body>
+</html>

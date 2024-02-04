@@ -1,0 +1,12 @@
+docker build -t sql_server_with_tables .
+docker run -d -p 1433:1433 --name sql_server_container sql_server_with_tables
+
+
+docker exec -it sql_server_container /opt/mssql-tools/bin/sqlcmd -S localhost -U SA -P Your_Strong_Password -i /docker-entrypoint-initdb.d/init.sql
+
+
+docker exec -it sql_server_container /opt/mssql-tools/bin/sqlcmd -S localhost -U SA -P Your_Strong_Password
+
+
+
+SELECT name FROM sys.databases;
